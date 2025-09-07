@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allem's Resto Bar</title>
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: aquamarine;
+    font-family: 'Oswald', sans-serif;;
+    overflow-x: hidden;
+}
+/*hero section*/
+#hero{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#hero::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(BACKGROUND.jpg); 
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    filter: brightness(50%);
+}
+
+#hero_content{
+    position: absolute;
+}
+#hero_content h1{
+    color:white;
+    font-size: 2.8rem;
+    text-shadow: 2px 2px 2px #000;
+}
+#hero_content h2{
+    color:white;
+    font-size: 2rem;
+    font-family: cursive;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+
+}
+#hero_content a{
+    color:white;
+    padding: 2px 20px 2px 20px;
+    border: 1px solid aquamarine ;
+    background: rgb(0, 0, 0, 0.6);
+    font-size: 1.5rem;
+    text-decoration: none;
+    border-radius: 25px;
+}
+#hero_content a:hover{
+    background: #009688;
+    transition: 0.5s;
+}
+
+/*header section*/
+
+#header {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 70px;
+    line-height: 70px;
+    z-index: 100;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#navbar h1 {
+    color: white;
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 2px #000;
+    font-family: cursive;
+}
+
+#navbar ul {
+    display: flex;
+}
+
+#navbar ul li {
+    list-style: none;
+    padding: 3px 15px 3px 15px;
+    position: relative;
+}
+
+#navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    position: relative;
+}
+
+#navbar ul li a::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: aliceblue;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: 0.5s;
+}
+
+#navbar ul li a:hover::after {
+    width: 100%;
+}
+
+#phone a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    padding: 3px 15px 3px 15px;
+    border: 1px solid aquamarine;
+}
+
+#content {
+    margin-top: 70px;
+}
+
+/* Header section end */
+
+
+/* MENU section */
+#Section {
+    padding: 25px 0 25px 0;
+    text-align: center;
+    font-size: 2rem;
+    font-family: Verdana;
+    color: white;
+}
+
+#menu_row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+#menu-col {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    border: 1px solid #ccc;
+    background-color: rgba(0, 0, 0, 0.5); 
+    margin: 10px;
+    padding: 20px; 
+    flex: 1;
+    border-radius: 8px;
+}
+
+#menu-col h2 {
+    background-color: #7a67ee; 
+    color: #fff;
+    text-align: center;
+    padding: 10px; 
+    font-family: 'cursive', cursive; 
+    border-radius: 4px; 
+}
+
+#image {
+    width: 300px;
+    height: 150px;
+    border-radius: 5%;
+    padding: 5px;
+    border: 2px solid purple;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+#image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+    object-fit: cover;
+}
+
+#image:hover {
+    transform: scale(1.1);
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 5px;
+}
+
+#menu-col h2,
+.box h3,
+.box h4 {
+    color: #fff;
+}
+/* MENU section END */
+  
+  
+
+/* Chef section */
+#chef {
+    padding: 25px 0 25px 0;
+  }
+  
+  #chef_row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .chef_col {
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+    position: relative; 
+    transition: transform 0.2s, filter 0.2s; 
+  }
+  
+  .chef_img {
+    width: 200px; 
+    height: 200px; 
+    margin: auto;
+    border-radius: 20px; 
+    overflow: hidden; 
+    position: relative; 
+  }
+  
+  .chef_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s; 
+  }
+  
+  .description {
+    display: none; 
+    background: rgba(0, 0, 0, 0.7); 
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    border-radius: 0 0 20px 20px; 
+    transition: opacity 0.2s; 
+  }
+  
+  .chef_col:hover {
+    transform: scale(1.1); 
+    filter: brightness(80%);
+  }
+  
+  .chef_col:hover .description {
+    display: block; 
+    opacity: 1; 
+  }
+
+  h6 {
+    color: #fff;
+    font-size: 1.5em; 
+}
+
+/* chef section end */
+  
+
+/* ABOUT section */
+#about {
+    padding: 25px 0 25px 0;
+    text-align: center;
+    color: #fff;
+}
+
+#about_row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 100px 0 100px;
+}
+
+.about_col {
+    text-align: center;
+}
+
+.about_table {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 10px;
+    padding: 20px;
+    flex: 1;
+    border-radius: 8px;
+}
+
+.about_table h2 {
+    background-color: #7a67ee;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-family: 'cursive', cursive;
+    border-radius: 4px;
+}
+
+.about_col p {
+    text-align: justify;
+    font-weight: bold;
+    line-height: 1.5; 
+    margin: 10px 0; 
+    color: #fff
+}
+
+/*About-section-End*/
+
+  /*loacation section*/
+  #Location {
+    padding: 25px 0 25px 0;
+    text-align: center;
+    color: #fff;
+}
+
+#Location_row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 100px 0 100px;
+}
+/*loacation end*/
+
+/*contact-section*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color:white; 
+  font-family: 'Oswald', sans-serif;
+  overflow-x: hidden;
+}
+
+.contact-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-info {
+    color: #fff;
+    max-width: 500px;
+    line-height: 65px;
+    padding-left: 50px;
+    font-size: 18px;
+  }
+  
+  .contact-info i {
+    margin-right: 20px;
+    font-size: 25px;
+  }
+  
+  .contact-form {
+    max-width: 700px;
+    margin-right: 50px;
+  }
+  
+  .contact-info,
+  .contact-form {
+    flex: 1;
+  }
+  
+  .contact-form h2 {
+    color: #fff;
+    text-align: center;
+    font-size: 35px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+  
+  .contact-form .text-box {
+    background: #000;
+    color: #fff;
+    border: none;
+    width: calc(50% - 10px);
+    height: 50px;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    opacity: 0.9;
+  }
+  
+  .contact-form .text-box:first-child {
+    margin-right: 15px;
+  }
+  
+  .contact-form textarea {
+    background: #000;
+    color: #fff;
+    border: none;
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    min-height: 200px;
+    max-height: 400px;
+    resize: vertical;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    opacity: 0.9;
+  }
+  
+  .contact-form .send-btn {
+    float: right;
+    background: #2E94E3;
+    color: #fff;
+    border: none;
+    width: 120px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    transition-property: background;
+  }
+
+  .contact-form .send-btn:hover {
+    background: #0582E3;
+  }
+  #Contact {
+    padding: 25px 0 25px 0;
+    text-align: center;
+    color: #fff;
+}
+
+#Contact_row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 100px 0 100px;
+}
+/*CONTACT SECTION END*/
+
+/*footer section*/
+footer {
+    background: #343434;
+    padding: 20px 0;
+    width: 100vw; 
+    text-align: center;
+}
+
+.container {
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-content {
+    width: 33.3%;
+    text-align: center; 
+    color: #fff;
+}
+
+h5 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.footer-content p {
+    width: 190px;
+    margin: auto;
+    padding: 7px;
+    text-align: center;
+    color: #fff; 
+}
+
+.footer-content ul {
+    text-align: center;
+    color: #fff;
+}
+
+.list {
+    padding: 0;
+}
+
+.list li {
+    text-align: center;
+    list-style-type: none;
+    padding: 7px;
+    position: relative;
+}
+
+.list li::before {
+    content: '';
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 100%;
+    width: 0;
+    height: 2px;
+    background: #7a67ee;
+    transition-duration: .5s;
+}
+
+.list li:hover::before {
+    width: 70px;
+}
+
+.social-icons {
+    text-align: center;
+    padding: 0;
+}
+
+.social-icons li {
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+}
+
+.social-icons i {
+    color: white;
+    font-size: 25px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+
+}
+
+a:hover {
+  color: white;
+}
+
+.social-icons i:hover {
+    color: purple;
+}
+
+.bottom-bar {
+    background: #7a67ee;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.bottom-bar p {
+    color: #000000;
+    margin: 0;
+    font-size: 16px;
+    padding: 7px;
+}
+/* Footer Section End */
+/* END OF CSS  END OF CSS  END OF CSS END OF CSS */
+/* END OF CSS  END OF CSS  END OF CSS END OF CSS */
+/* END OF CSS  END OF CSS  END OF CSS END OF CSS */
+/* END OF CSS  END OF CSS  END OF CSS END OF CSS */
+
+</style>
+
+<!--START OF HTML  START OF HTML  START OF HTML-->
+<!--START OF HTML  START OF HTML  START OF HTML-->
+<!--START OF HTML  START OF HTML  START OF HTML-->
+<!--START OF HTML  START OF HTML  START OF HTML-->
+
+<!--hero section begin -->
+<div id="hero">
+    <div id="hero_content">
+        <h1>Allem's Resto Bar</h1>
+        <h2>MODERN MEETS RETRO</h2>
+        <a href="#menu">MENU</a>
+    </div>
+</div>
+<!--Hero section end-->
+
+<!--HEADER SECTION BEGIN -->
+<div id="header">
+    <nav id="navbar">
+        <h1>Allem's Resto Bar</H1>
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="#menu">MENU</a></li>
+            <li><a href="#chef">CHEF</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="#location">LOCATION</a></li>
+        </ul>
+        <div id="phone">
+            <a href="tel:+639090909090">+639090909090</a>
+        </div>
+    </nav>
+</div>
+<!--HEADER SECTION end -->
+
+ <!-- MENU -->
+<div id="menu">
+  <h1 id="Section">Menu</h1>
+  <div id="menu_row">
+    <div id="menu-col" data-aos="fade-up">
+      <h2>PIZZA</h2>
+      <div class="box">
+        <div id="image">
+          <img src="pizza1.jpg">
+        </div>
+        <div>
+          <h3> Mushroom Pizza</h3>
+          <h4> ₱250</h4>
+        </div>
+      </div>
+    
+    </div>
+    <div id="menu-col" data-aos="fade-up">
+      <h2>DRINKS</h2>
+      <div class="box">
+        <div id="image">
+          <img src="DRINK1. jpg.jpg">
+        </div>
+        <div>
+          <h3> Margarita</h3>
+          <h4> ₱150</h4>
+        </div>
+      </div>
+      
+    </div>
+    <div id="menu-col" data-aos="fade-up">
+      <h2>Chicken</h2>
+      <div class="box">
+        <div id="image">
+          <img src="CHICKEN1.jpeg">
+        </div>
+        <div>
+          <h3> Spicy Chicken</h3>
+          <h4> ₱250</h4>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- MENU END -->
+
+<!-- CHEFS BEGIN-->
+<div id="chef">
+  <h1 id="Section">Chef's</h1>
+  <div id="chef_row">
+    <div class="chef_col" data-aos="fade-up">
+      <div class="chef_img">
+        <img src="CHEF1.jpg">
+      </div>
+      <div class="description">
+        <p>Chef Isabella: Creative fusion of global flavors with a vintage twist.</p>
+      </div>
+      <div>
+        <h6>Isabella Anderson</h6>
+      </div>
+    </div>
+    <div class="chef_col" data-aos="fade-up">
+      <div class="chef_img">
+        <img src="CHEF2.jpg">
+      </div>
+      <div class="description">
+        <p>Chef Marco: Master of modern gastronomy with a retro flair.</p>
+      </div>
+      <div>
+        <h6>Marco Russo</h6>
+      </div>
+    </div>
+    <div class="chef_col" data-aos="fade-up">
+      <div class="chef_img">
+        <img src="CHEF3.jpg">
+      </div>
+      <div class="description">
+        <p>Chef Julia: Culinary time traveler crafting classic dishes with innovation.</p>
+      </div>
+      <div>
+        <h6>Julia Sinclair</h6>
+      </div>
+    </div>
+    <div class="chef_col" data-aos="fade-up">
+      <div class="chef_img">
+        <img src="CHEF4.jpg">
+      </div>
+      <div class="description">
+        <p>Luca: Expert in reviving timeless recipes with a contemporary touch.</p>
+      </div>
+      <div>
+        <h6>Luca Bianchi</h6>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- CHEFS END-->
+
+
+<!-- ABOUT Section -->
+<div id="about">
+  <h1 id="section">About</h1>
+  <div id="about_row">
+    <div class="about_col" data-aos="fade-up">
+      <div class="about_table">
+        <h2>About us</h2>
+        <p>
+          Welcome to Allem's Resto Bar, where the past and present come together in a harmonious blend of modern sophistication and retro charm. Our story is one that celebrates the timeless appeal of classic cuisine and the contemporary twist of modern dining, all in a setting that exudes nostalgia and innovation.
+
+          At Allem's, we believe in staying at the forefront of culinary innovation. Our menu is a testament to this commitment, where modern techniques and fresh, locally-sourced ingredients combine to offer a delectable fusion of flavors. From artisanal cocktails crafted by our expert mixologists to the chef's innovative interpretations of classic dishes, we ensure that every visit is a unique and unforgettable experience.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ABOUT Section END -->
+
+  <!--locaion section end-->
+        <div id="location">
+          <h1 id="Location">Location</h1>
+          <div id="Location_row" data-aos="fade-up">
+
+
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1630.7448110807923!2d125.51975695837389!3d8.942540792193574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3301c0f8cf8d08c3%3A0xe75a7abb2d25a323!2sRobinsons%20Butuan!5e0!3m2!1sen!2sph!4v1698488461950!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+         <!--locaion section end-->
+
+<!--contact section start-->
+        <div id="contact">
+          <h1 id="Contact">Contact</h1>
+          <div id="Contact_row" data-aos="fade-up>
+        <div class="contact-section">
+          <div class="contact-info">
+            <div><i class="fas fa-map-marker-alt"></i>Robinson's Butuan 3rd floo</div>
+            <div><i class="fas fa-envelope"></i>info@allemsrestobar.com</div>
+            <div><i class="fas fa-phone"></i>+639090909090</div>
+            <div><i class="fas fa-clock"></i>Mon - Fri 12:00 AM to 12:00    AM</div>
+          </div>
+          <div class="contact-form" data-aos="fade-up>
+            <h2>Contact Us</h2>
+            <form class="contact" action="" method="post">
+              <input type="text" name="name" class="text-box" placeholder="Your Name" required>
+              <input type="email" name="email" class="text-box" placeholder="Your Email" required>
+              <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+              <input type="submit" name="submit" class="send-btn" value="Send">
+            </form>
+          </div>
+        </div>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h5>Contact Us</h5>
+                <p>Email: info@allemsrestobar.com</p>
+                <p>Phone:+639090909090</p>
+                <p>Address:Robinson's Butuan 3rd floor</p>
+            </div>
+            <div class="footer-content">
+                <h3>Quick Links</h3>
+                 <ul class="list">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#menu">MENU</a></li>
+                    <li><a href="#chef">CHEF</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                    <li><a href="#location">LOCATION</a></li>
+                 </ul>
+            </div>
+            <div class="footer-content">
+                <h5>Follow Us</h5>
+                <ul class="social-icons"><h5>Follow Us</h5>
+                    <ul class="social-icons">
+                        <li><a href="https://www.facebook.com/YourFacebookPage"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="https://twitter.com/YourTwitterHandle"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com/YourInstagramProfile"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/YourLinkedInProfile"><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+                    
+                </ul>
+                </div>
+        </div>
+        <div class="bottom-bar">
+            <p>&copy; 2023 Allem's Resto Bar. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+</body>
+</html>
