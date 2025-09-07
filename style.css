@@ -10,6 +10,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
 }
 
 body {
@@ -880,8 +881,8 @@ footer .container {
 
   /* Center the home content */
   .home {
-    justify-content: center;   /* center horizontally */
-    text-align: center;        /* center text */
+    justify-content: center;  
+    text-align: center;       
     padding: 40px 20px;
   }
 
@@ -931,7 +932,7 @@ footer .container {
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    background: #fff;   /* solid background */
+    background: #fff;   
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     position: fixed;
     top: 0;
@@ -945,8 +946,8 @@ footer .container {
     display: none;
   }
 
-  .navigation a:first-child,   /* Home */
-  .navigation a:last-child {   /* Let's Talk */
+  .navigation a:first-child,   
+  .navigation a:last-child {  
     display: inline-block;
     margin-right: 15px;
     font-size: 1em;
@@ -957,7 +958,7 @@ footer .container {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding: 100px 20px 40px; /* space for header */
+    padding: 100px 20px 40px; 
   }
 
   .home .content {
@@ -992,7 +993,7 @@ footer .container {
 /* Desktop adjustments */
 @media (min-width: 769px) {
   .home {
-    padding-left: 140px; /* shift content a bit to the right */
+    padding-left: 140px; 
   }
 }
 
@@ -1003,7 +1004,7 @@ footer .container {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding: 100px 20px 60px; /* extra bottom padding for spacing */
+    padding: 100px 20px 60px; 
   }
 
   .Home_buttons {
@@ -1023,8 +1024,9 @@ footer .container {
   /* Push icons further down to avoid overlapping */
   .icons {
     position: relative;
-    margin-top: 50px; /* more spacing */
+    margin-top: 50px; 
     display: flex;
     justify-content: center;
   }
 }
+
